@@ -31,7 +31,7 @@ These are one to one identical to the neofetch modules. Documentation on the dif
 Dependencies
 ------------
 
-This role requires `ednxzu.manage_apt_packages` in order to make sur that neofetch is installed.
+This role requires `ednxzu.manage_apt_packages` in order to make sure that neofetch is installed.
 
 Example Playbook
 ----------------
