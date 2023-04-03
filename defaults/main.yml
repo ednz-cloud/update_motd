@@ -1,5 +1,6 @@
 ---
 # defaults file for update_motd
+update_motd_filename: "00-motd-neofetch"
 update_motd_print_info:
   - name: "CPU"
     module: "cpu"

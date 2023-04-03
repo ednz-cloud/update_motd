@@ -1,4 +1,4 @@
 ---
-# requirements file for molecule
+# meta file for update_motd
 roles:
   - name: ednxzu.manage_apt_packages

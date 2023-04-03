@@ -1,0 +1,12 @@
+---
+update_motd_filename: "00-motd-neofetch"
+update_motd_print_info:
+  - name: "CPU"
+    module: "cpu"
+  - name: "Memory"
+    module: "memory"
+  - name: "Local IP"
+    module: local_ip
+  - name: "Disk"
+    module: "disk"
+update_motd_ascii_distro: "{{ ansible_distribution }}_small"

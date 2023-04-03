@@ -1,0 +1,17 @@
+---
+# task/configure file for update_motd
+- name: "Copy configuration file for neofetch motd"
+  ansible.builtin.template:
+    src: "motd.cfg.j2"
+    dest: "{{ update_motd_config_path }}/motd.cfg"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: "Copy motd script file"
+  ansible.builtin.copy:
+    src: files/motd.sh
+    dest: "{{ update_motd_path }}/{{ update_motd_filename }}"
+    mode: '0744'
+    owner: root
+    group: root

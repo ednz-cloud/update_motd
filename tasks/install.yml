@@ -1,0 +1,10 @@
+---
+# task/install file for update_motd
+- name: "Install neoftech"
+  ansible.builtin.include_role:
+    name: ednxzu.manage_apt_packages
+  vars:
+    manage_apt_packages_list:
+      - name: neofetch
+        version: latest
+        state: present

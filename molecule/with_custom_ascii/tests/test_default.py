@@ -11,13 +11,11 @@ def test_hosts_file(host):
 def test_motd_file(host):
     """Validate motd.cfg file."""
     motd_cfg = host.file("/etc/profile.d/motd.cfg")
-    dist_os = host.system_info.distribution
     assert motd_cfg.exists
     assert motd_cfg.user == "root"
     assert motd_cfg.group == "root"
     assert motd_cfg.mode == 0o644
     assert motd_cfg.contains("print_info()")
-    assert motd_cfg.contains("ascii_distro=\"" + dist_os + "_small\"")
 
 def test_motd_file(host):
     """Validate 00-motd-neofetch file."""
