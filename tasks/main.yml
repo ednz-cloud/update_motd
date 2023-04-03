@@ -1,2 +1,8 @@
 ---
 # task/main file for update_motd
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ ansible_distribution }}"
+
+- name: "Import cleanup.yml"
+  ansible.builtin.include_tasks: cleanup.yml

@@ -1,2 +1,3 @@
 ---
 # vars file for update_motd
+update_motd_path: "/etc/update-motd.d"

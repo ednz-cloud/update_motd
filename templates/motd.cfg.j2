@@ -1,0 +1,78 @@
+# {{ ansible_managed }}
+
+print_info() {
+    info title
+    info underline
+{% for module in alpine_motd_print_info %}
+    info "{{ module.name }}" {{ module.module }}
+{% endfor %}
+    info cols
+}
+
+title_fqdn="{{ alpine_motd_title_fqdn }}"
+kernel_shorthand="{{ alpine_motd_kernel_shorthand }}"
+distro_shorthand="{{ alpine_motd_distro_shorthand }}"
+os_arch="{{ alpine_motd_os_arch  }}"
+uptime_shorthand="{{ alpine_motd_uptime_shorthand }}"
+memory_percent="{{ alpine_motd_memory_percent }}"
+memory_unit="{{ alpine_motd_memory_unit }}"
+package_managers="{{ alpine_motd_package_managers }}"
+shell_path="{{ alpine_motd_shell_path }}"
+shell_version="{{ alpine_motd_shell_version }}"
+speed_type="{{ alpine_motd_speed_type }}"
+speed_shorthand="{{ alpine_motd_speed_shorthand }}"
+cpu_brand="{{ alpine_motd_cpu_brand }}"
+cpu_speed="{{ alpine_motd_cpu_speed }}"
+cpu_cores="{{ alpine_motd_cpu_cores }}"
+cpu_temp="{{ alpine_motd_cpu_temp }}"
+gpu_brand="{{ alpine_motd_gpu_brand }}"
+gpu_type="{{ alpine_motd_gpu_type }}"
+refresh_rate="{{ alpine_motd_refresh_rate }}"
+gtk_shorthand="{{ alpine_motd_gtk_shorthand }}"
+gtk2="{{ alpine_motd_gtk2 }}"
+gtk3="{{ alpine_motd_gtk3 }}"
+public_ip_host="{{ alpine_motd_public_ip_host }}"
+public_ip_timeout="{{ alpine_motd_public_ip_timeout }}"
+local_ip_interface={{ alpine_motd_local_ip_interface }}
+de_version="{{ alpine_motd_de_version }}"
+disk_show={{ alpine_motd_disk_show }}
+disk_subtitle="{{ alpine_motd_disk_subtitle }}"
+disk_percent="{{ alpine_motd_disk_percent }}"
+music_player="{{ alpine_motd_music_player }}"
+song_format="{{ alpine_motd_song_format }}"
+song_shorthand="{{ alpine_motd_song_shorthand }}"
+mpc_args={{ alpine_motd_mpc_args }}
+colors={{ alpine_motd_colors }}
+bold="{{ alpine_motd_bold }}"
+underline_enabled="{{ alpine_motd_underline_enabled }}"
+underline_char="{{ alpine_motd_underline_char }}"
+separator="{{ alpine_motd_separator }}"
+block_range={{ alpine_motd_block_range }}
+color_blocks="{{ alpine_motd_color_blocks }}"
+block_width={{ alpine_motd_block_width }}
+block_height={{ alpine_motd_block_height }}
+col_offset="{{ alpine_motd_col_offset }}"
+bar_char_elapsed="{{ alpine_motd_bar_char_elapsed }}"
+bar_char_total="{{ alpine_motd_bar_char_total }}"
+bar_border="{{ alpine_motd_bar_border }}"
+bar_length={{ alpine_motd_bar_length }}
+bar_color_elapsed="{{ alpine_motd_bar_color_elapsed }}"
+bar_color_total="{{ alpine_motd_bar_color_total }}"
+memory_display="{{ alpine_motd_memory_display }}"
+battery_display="{{ alpine_motd_battery_display }}"
+disk_display="{{ alpine_motd_disk_display }}"
+image_backend="{{ alpine_motd_image_backend }}"
+image_source="{{ alpine_motd_image_source }}"
+ascii_distro="{{ alpine_motd_ascii_distro }}"
+ascii_colors={{ alpine_motd_ascii_colors }}
+ascii_bold="{{ alpine_motd_ascii_bold }}"
+image_loop="{{ alpine_motd_image_loop }}"
+thumbnail_dir="{{ alpine_motd_thumbnail_dir }}"
+crop_mode="{{ alpine_motd_crop_mode }}"
+image_size="{{ alpine_motd_image_size }}"
+catimg_size="{{ alpine_motd_catimg_size }}"
+gap={{ alpine_motd_gap }}
+yoffset={{ alpine_motd_yoffset }}
+xoffset={{ alpine_motd_xoffset }}
+background_color="{{ alpine_motd_background_color }}"
+stdout="{{ alpine_motd_stdout }}"

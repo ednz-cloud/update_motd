@@ -1,0 +1,25 @@
+---
+# task/cleanup file for update_motd
+- name: "Ensure no other files are in motd"
+  block:
+    - name: "Collect files in motd dir"
+      ansible.builtin.find:
+        paths: "{{ update_motd_path }}/"
+        hidden: true
+        recurse: true
+        file_type: any
+      register: collected_files
+
+    - name: 'Collect dir in motd dir'
+      ansible.builtin.find:
+        paths: "{{ update_motd_path }}/"
+        hidden: true
+        recurse: true
+        file_type: directory
+      register: collected_directories
+
+    - name: "Remove all unwanted files and directories"
+      ansible.builtin.file:
+        path: "{{ item.path }}"
+        state: absent
+      loop: "{{ collected_files.files + collected_directories.files }}"

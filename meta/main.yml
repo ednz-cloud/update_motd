@@ -2,7 +2,7 @@ galaxy_info:
   namespace: 'ednxzu'
   role_name: 'update_motd'
   author: 'Bertrand Lanson'
-  description: 'Manage MOTD for debian-based distros.'
+  description: 'Manage MOTD for debian-based distros using neofetch.'
   license: 'license (BSD, MIT)'
   min_ansible_version: '2.10'
   platforms:
