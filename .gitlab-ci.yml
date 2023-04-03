@@ -37,7 +37,7 @@ variables:
 
 .script-molecule-test-with-custom-ascii:
   script:
-    - molecule test -s with_custom_repo
+    - molecule test -s with_custom_ascii
 
 ansible-verify:
   stage: verify
