@@ -4,7 +4,4 @@
   ansible.builtin.include_role:
     name: ednxzu.manage_apt_packages
   vars:
-    manage_apt_packages_list:
-      - name: neofetch
-        version: latest
-        state: present
+    manage_apt_packages_list: "{{ update_motd_packages }}"
