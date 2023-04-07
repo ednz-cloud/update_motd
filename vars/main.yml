@@ -1,5 +1,7 @@
 ---
 # vars file for update_motd
+update_motd_prerequisites_roles:
+  - ednxzu.manage_apt_packages
 update_motd_path: "/etc/update-motd.d"
 update_motd_config_path: "/etc/profile.d"
 update_motd_packages:

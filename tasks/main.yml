@@ -1,5 +1,8 @@
 ---
 # task/main file for update_motd
+- name: "Import prerequisites.yml"
+  ansible.builtin.include_tasks: prerequisites.yml
+
 - name: "Import install.yml"
   ansible.builtin.include_tasks: install.yml
 
