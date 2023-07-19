@@ -1,4 +1,4 @@
-Update MOTD
+update_motd
 =========
 > This repository is only a mirror. Development and testing is done on a private gitlab server.
 
