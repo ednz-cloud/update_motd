@@ -9,4 +9,4 @@ update_motd_print_info:
     module: local_ip
   - name: "Disk"
     module: "disk"
-update_motd_ascii_distro: "{{ ansible_distribution }}_small"
+update_motd_ascii_distro: "{{ ansible_distribution|lower }}_small"
