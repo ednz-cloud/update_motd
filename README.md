@@ -31,7 +31,7 @@ These are one to one identical to the neofetch modules. Documentation on the dif
 Dependencies
 ------------
 
-This role has a task that installs its own dependencies located in `task/prerequisites.yml`, so that you don't need to manage them. This role requires `ednxzu.manage_apt_packages` in order to make sure that neofetch is installed.
+`ednxzu.manage_apt_packages` to install neofetch for the motd.
 
 Example Playbook
 ----------------
