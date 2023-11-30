@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ednxzu.update_motd"
+      ansible.builtin.include_role:
+        name: "ednxzu.update_motd"

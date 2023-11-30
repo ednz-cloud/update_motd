@@ -1,0 +1,46 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: "Test: file /etc/hosts"
+      block:
+        - name: "Stat file /etc/hosts"
+          ansible.builtin.stat:
+            path: "/etc/hosts"
+          register: stat_etc_hosts
+
+        - name: "Verify file /etc/hosts"
+          vars:
+            etc_hosts_group:
+              ubuntu: "adm"
+              debian: "root"
+          ansible.builtin.assert:
+            that:
+              - stat_etc_hosts.stat.exists
+              - stat_etc_hosts.stat.isreg
+              - stat_etc_hosts.stat.pw_name == 'root'
+              - stat_etc_hosts.stat.gr_name == etc_hosts_group[(ansible_distribution|lower)]
+
+    - name: "Test: file /etc/profile.d/motd.cfg"
+      block:
+        - name: "Stat file /etc/profile.d/motd.cfg"
+          ansible.builtin.stat:
+            path: "/etc/profile.d/motd.cfg"
+          register: stat_etc_profile_d_motd_cfg
+
+        - name: "Slurp file /etc/profile.d/motd.cfg"
+          ansible.builtin.slurp:
+            src: "/etc/profile.d/motd.cfg"
+          register: slurp_etc_profile_d_motd_cfg
+
+        - name: "Verify file /etc/profile.d/motd.cfg"
+          ansible.builtin.assert:
+            that:
+              - stat_etc_profile_d_motd_cfg.stat.exists
+              - stat_etc_profile_d_motd_cfg.stat.isreg
+              - stat_etc_profile_d_motd_cfg.stat.pw_name == 'root'
+              - stat_etc_profile_d_motd_cfg.stat.gr_name == 'root'
+              - stat_etc_profile_d_motd_cfg.stat.mode == '0644'
+              - "'print_info()' in (slurp_etc_profile_d_motd_cfg.content|b64decode)"
+              - "'ascii_distro=\"{{ ansible_distribution|lower|string }}_small\"' in (slurp_etc_profile_d_motd_cfg.content|b64decode)"

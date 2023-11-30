@@ -24,8 +24,10 @@
         state: absent
       loop: "{{ collected_files.files + collected_directories.files }}"
       when: (item.path|basename) != update_motd_filename
+      become: true
 
 - name: "Remove /etc/motd file"
   ansible.builtin.file:
     path: "/etc/motd"
     state: absent
+  become: true

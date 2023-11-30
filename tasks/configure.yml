@@ -7,6 +7,7 @@
     owner: root
     group: root
     mode: '0644'
+  become: true
 
 - name: "Copy motd script file"
   ansible.builtin.copy:
@@ -15,3 +16,4 @@
     mode: '0744'
     owner: root
     group: root
+  become: true
