@@ -3,6 +3,6 @@
   hosts: all
   become: true
   tasks:
-    - name: "Include ednxzu.update_motd"
+    - name: "Include ednz_cloud.update_motd"
       ansible.builtin.include_role:
-        name: "ednxzu.update_motd"
+        name: "ednz_cloud.update_motd"

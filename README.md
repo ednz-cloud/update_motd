@@ -31,7 +31,7 @@ These are one to one identical to the neofetch modules. Documentation on the dif
 Dependencies
 ------------
 
-`ednxzu.manage_apt_packages` to install neofetch for the motd.
+`ednz_cloud.manage_apt_packages` to install neofetch for the motd.
 
 Example Playbook
 ----------------
@@ -40,7 +40,7 @@ Example Playbook
 # calling the role inside a playbook with either the default or group_vars/host_vars
 - hosts: servers
   roles:
-    - ednxzu.update_motd
+    - ednz_cloud.update_motd
 ```
 
 License
