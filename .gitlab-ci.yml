@@ -8,8 +8,8 @@ image:
   name: registry.ednz.fr/forge/ansible-runner
 
 variables:
-  ANSIBLE_HOST_KEY_CHECKING: 'false'
-  ANSIBLE_FORCE_COLOR: 'true'
+  ANSIBLE_HOST_KEY_CHECKING: "false"
+  ANSIBLE_FORCE_COLOR: "true"
   ANSIBLE_PYTHON_INTERPRETER: /usr/bin/python3
   DOCKER_AUTH_CONFIG: $CI_DOCKER_AUTH_CONFIG
 
@@ -79,4 +79,10 @@ ansible-test-debian-11-with-custom-ascii:
   extends:
     - .stage-test-with-custom-ascii
     - .variables-debian-11
+    - .script-molecule-test-with-custom-ascii
+
+ansible-test-debian-12-with-custom-ascii:
+  extends:
+    - .stage-test-with-custom-ascii
+    - .variables-debian-12
     - .script-molecule-test-with-custom-ascii
