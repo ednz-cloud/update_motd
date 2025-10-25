@@ -32,6 +32,7 @@ print_info() {
     # info "Locale" locale  # This only works on glibc systems.
     info cols
 }
+# some more comment for testing
 # Title
 # Hide/Show Fully qualified domain name.
 #
