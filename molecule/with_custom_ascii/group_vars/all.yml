@@ -12,5 +12,3 @@ update_motd_print_info:
 update_motd_ascii_distro: "{{ ansible_distribution|lower }}_small"
 
 another_useless_variable: true
-
-and_another_variable: string
