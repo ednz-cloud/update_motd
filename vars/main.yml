@@ -6,3 +6,5 @@ update_motd_packages:
   - name: neofetch
     version: latest
     state: present
+
+some_stashed_stuff: "?????"
